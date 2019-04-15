@@ -1,0 +1,24 @@
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    {% if buses %}
+    <h3>Found {{buses}} buses of searched category {{message}}</h3>
+    {% else %}
+    <h3>There is no category going by the searched term {{message}}</h3>
+    {% endif %}
+  </div>
+  
+    <script type="text/javascript">
+      function copyUrl(element) {
+        var myVar = document.getElementById(element)
+        myVar.select();
+        document.execCommand('copy')
+      }
+    </script>
+    
+ 
+</div>

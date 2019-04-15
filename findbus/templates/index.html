@@ -1,0 +1,374 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="{% static 'css/modal.css' %}">
+<link rel="stylesheet" href="{% static 'js/modal.js' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+
+<!-- Sidebar on click -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#bus" class="w3-bar-item w3-button">Modern Coast</a>
+  <a href="#bus" class="w3-bar-item w3-button">Tahmeed </a>
+  <a href="#bus" class="w3-bar-item w3-button">Coast Air Bus</a>
+  <a href="http://www.mashpoa.com/" class="w3-bar-item w3-button">Mash Poa </a>
+  <a href="https://buscar.co.ke/" class="w3-bar-item w3-button">Bus Car</a>
+  <a href="https://www.buskenya.com/p/blog-page_21.html" class="w3-bar-item w3-button">Simba coach</a>
+</nav>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Logo</a>
+  <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+  <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
+  <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Price</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+  <a href="/logout" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
+  
+
+  <form class="w3-bar-item  w3-right " role="search" action="{% url 'search_category' %}">
+  
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Bus" name="category">
+        <div class="input-group-btn">
+          
+        </div>
+      </div>
+
+    </form>
+  
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#team" class="w3-bar-item w3-button">Team</a>
+    <a href="#work" class="w3-bar-item w3-button">Work</a>
+    <a href="#pricing" class="w3-bar-item w3-button">Price</a>
+    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    <a href="#" class="w3-bar-item w3-button">Search</a>
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="{% static 'landing-page/bus-landing-page.jpg' %}" alt="Train" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+    <button onclick="document.getElementById('id01').style.display='block'"id ="bus" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">BOOK A BUS</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="w3-container">
+  
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+
+          <div class="">
+              <div class="card hovercard">
+                  <div class="card-background">
+
+                      <img class="card-bkimg" alt="" src="http://www.busonlineticket.com/booking/images/train-tickets.png">
+                      <!-- http://lorempixel.com/850/280/people/9/ -->
+                  </div>
+                  <div class="useravatar">
+                      <img alt="" src="http://www.busonlineticket.com/booking/images/train-tickets.png">
+                  </div>
+                  <div class="card-info"> <span class="card-title">Booking Ticket</span>
+          
+                  </div>
+              </div>
+              <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+                  <div class="btn-group" role="group">
+                      <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          <div class="hidden-xs">One-Way</div>
+                      </button>
+                  </div>
+                  <div class="btn-group" role="group" >
+                      <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-star" aria-hidden="true"></span><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          <div class="hidden-xs">Round-trip</div>
+                      </button>
+                  </div>
+                 
+              </div>
+          
+                  <div class="well">
+                <div class="tab-content">
+                  <div class="tab-pane fade in active" id="tab1">
+                    <div class="form-group">
+                              <div class="form-group col-lg-4" >
+                                  <input type="text" name="" class="form-control" id="" value=""  placeholder="From">
+                              </div>
+                              <div class="form-group col-lg-4" >
+                                  <input type="text" name="" class="form-control" id="" value=""  placeholder="To">
+                              </div>
+                              <div class="form-group col-lg-4" >
+                                <input type="text" name="" class="form-control" id="" value=""  placeholder="Contact">
+                            </div>
+                              
+                    </div>
+                    <div class="form-group col-lg-4">
+                                  <div class="input-group" >
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                      <input type="date" class="form-control" placeholder="depart" />
+                                  </div>
+                      </div>
+                      <div class="form-group col-lg-4">
+                                  <div class="input-group" >
+                                      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                      <input type="text" class="form-control" placeholder="Passengers" />
+                                  </div>
+                      </div>
+                      <div class="form-group col-lg-4">
+                            <div class="rightTab">
+
+                              <select id="dropdown" name="currentPos" class="dropdown">
+                      
+                                <option disabled value>Select an option</option>
+                                <option  value="student">Modern Coast</option>
+                                <option value="job">Coast Bus</option>
+                                <option value="learner">Simba Coach</option>
+                                <option value="preferNo">Tahmeed</option>
+                                <option value="other">Mash poa</option>
+                                <option value="other">Bus car</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                 
+                      <a href="{% url 'message' %}" class="btn btn-primary btn-lg btn3d" role="button"><span class="glyphicon glyphicon-tag">Find Ticket</a>
+                                
+                
+                  </div>
+                  
+                  
+                </div>
+              
+                  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="team">
+<h2>MY TEAM</h2>
+<p>Meet the team </p>
+
+<div class="w3-row"><br>
+
+<div class="w3-col s4  w3-center"><p></p></div>
+
+<div class="w3-col s4  w3-center">
+  <img src="{% static 'landing-page/team.jpg' %}" alt="Boss" style="width:45%" class="w3-round w3-hover-opacity">
+  <h3>Lorna Wanjiku</h3>
+  <p>Boss Lady</p>
+</div>
+
+<div class="w3-col s4  w3-center"><p></p></div>
+  
+</div>
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<div class="w3-quarter">
+<h2>Our Work</h2>
+<p>We Provide a platform for buses in kenya to market themselves</p>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="{% static 'landing-page/tahmeed.jpeg' %}" alt="Coast" style="width:100%">
+  <div class="w3-container">
+  <h3>Tahmeed bus</h3>
+  <h4>Transport</h4>
+
+  
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="{% static 'landing-page/modern_coast_bus_1.jpg' %}" alt="coast" style="width:100%">
+  <div class="w3-container">
+  <h3>Modern Coast</h3>
+  <h4>Transport</h4>
+  
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="{% static 'landing-page/mash.jpeg' %}" alt="Mash" style="width:100%">
+  <div class="w3-container">
+  <h3>Mash Poa</h3>
+  <h4>Transport</h4>
+  
+  </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Container -->
+<div class="w3-container" style="position:relative">
+  <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+  style="position:absolute;top:-28px;right:24px">View sites for buses</a>
+</div>
+<!-- Pricing Row -->
+<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+  <h2>PRICING</h2>
+  <p>Some of the prices depending on the class.</p><br>
+  <div class="w3-third w3-margin-bottom">
+    <ul class="w3-ul w3-border w3-hover-shadow">
+      <li class="w3-theme">
+        <p class="w3-xlarge">Business Class</p>
+      </li>
+      <li class="w3-padding-16"><b>800kshs</b> Per person</li>
+      <li class="w3-padding-16"><b>Free</b> Water</li>
+      
+      <li class="w3-padding-16">
+        <h2 class="w3-wide"><i class="fa fa-usd"></i> 8</h2>
+        <span class="w3-opacity">per trip</span>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+    <ul class="w3-ul w3-border w3-hover-shadow">
+      <li class="w3-theme-l2">
+        <p class="w3-xlarge">First Class Lane</p>
+      </li>
+      <li class="w3-padding-16"><b>1000kshs</b> Per person</li>
+      <li class="w3-padding-16"><b>Free</b> water</li>
+      
+      
+      <li class="w3-padding-16">
+        <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
+        <span class="w3-opacity">per trip</span>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+    <ul class="w3-ul w3-border w3-hover-shadow">
+      <li class="w3-theme">
+        <p class="w3-xlarge">V Important Person</p>
+      </li>
+      <li class="w3-padding-16"><b>1300kshs</b> Per person</li>
+      <li class="w3-padding-16"><b>Free</b> Water</li>
+      
+      <li class="w3-padding-16">
+        <h2 class="w3-wide"><i class="fa fa-usd"></i> 13</h2>
+        <span class="w3-opacity">per trip</span>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      <p>Swing by for a cup of coffee, or whatever.</p>
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i> Nairobi, KE</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +254 796774831</p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> lorna.wanjiku56@gmailcom</p>
+    </div>
+    <div class="w3-col m7">
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+      <div class="w3-section">      
+        <label>Name</label>
+        <input class="w3-input" type="text" name="Name" required>
+      </div>
+      <div class="w3-section">      
+        <label>Email</label>
+        <input class="w3-input" type="text" name="Email" required>
+      </div>
+      <div class="w3-section">      
+        <label>Message</label>
+        <input class="w3-input" type="text" name="Message" required>
+      </div>  
+      <input class="w3-check" type="checkbox" checked name="Like">
+      <label>I Like it!</label>
+      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+<img src="{% static 'landing-page/location.png' %}" class="w3-image w3-greyscale-min" style="width:100%;">
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <h4>Follow Us</h4>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+
+</body>
+</html>
